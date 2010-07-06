@@ -1,0 +1,59 @@
+[logging]
+ default = FILE:/var/log/krb5libs.log
+ kdc = FILE:/var/log/krb5kdc.log
+ admin_server = FILE:/var/log/kadmind.log
+
+[libdefaults]
+ ticket_lifetime = 36000
+ default_realm = bu.edu
+ dns_lookup_realm = false
+ dns_lookup_kdc = false
+ default_tkt_enctypes = DES-CBC-CRC
+ default_tgs_enctypes = DES-CBC-CRC
+
+[realms]
+ AD.BU.EDU = {
+   kdc = adc1.bu.edu.
+   kdc = adc2.bu.edu.
+   kdc = adc3.bu.edu.
+   kdc = adc4.bu.edu.
+   kdc = adc5.bu.edu.
+   default_domain = ad.bu.edu
+ }
+
+ BU.EDU = {
+   kdc = kerberos1.bu.edu.:750
+   kdc = kerberos2.bu.edu.:750
+   kdc = kerberos3.bu.edu.:750
+   admin_server = kerberos1.bu.edu.
+   default_domain = bu.edu
+ }
+
+ bu.edu = {
+  kdc = kerberos1.bu.edu.:88
+  kdc = kerberos2.bu.edu.:88
+  kdc = kerberos3.bu.edu.:88
+  admin_server = kerberos1.bu.edu.
+ }
+
+[domain_realm]
+ .bu.edu = bu.edu
+ bu.edu = bu.edu
+ .ad.bu.edu = AD.BU.EDU
+ ad.bu.edu = AD.BU.EDU
+ engna1.bu.edu = AD.BU.EDU
+ engna2.bu.edu = AD.BU.EDU
+
+[kdc]
+ profile = /var/kerberos/krb5kdc/kdc.conf
+
+[appdefaults]
+ pam = {
+   debug = false
+   ticket_lifetime = 36000
+   renew_lifetime = 36000
+   forwardable = true
+   krb4_convert = false
+   ignore_afs = true
+   minimum_uid = 3000
+ }

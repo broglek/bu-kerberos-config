@@ -1,0 +1,7 @@
+bu-kerberos-config (0.01) unstable; urgency=low
+
+  * First Version
+  * Diverts old krb5.conf with krb5.conf.bu [stock BU template]
+
+ -- Kyle Brogle <broglek@bu.edu>  Tue, 06 Jul 2010 17:26:29 -0400
+

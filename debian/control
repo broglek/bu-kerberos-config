@@ -1,0 +1,15 @@
+Source: bu-kerberos-config
+Section: utils
+Priority: extra
+Maintainer: Kyle Brogle <broglek@bu.edu>
+Build-Depends: cdbs, debhelper (>= 7.4.15ubuntu1), config-package-dev (>= 4.5~), krb5-user, krb5-config
+Standards-Version: 3.8.4
+
+Package: bu-kerberos-config
+Architecture: all
+Depends: krb5-config, krb5-user, krb5-clients, ntp | ntp-server | time-daemon, ntpdate | time-daemon, ${misc:Depends}
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: Kerberos configuration for Boston University
+ This package uses config-package-dev to backup current Kerberos config and
+ installs configuration files for Boston University.	     
