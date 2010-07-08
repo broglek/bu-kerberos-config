@@ -1,3 +1,10 @@
+bu-kerberos-config (0.02) unstable; urgency=low
+
+  * Modified krb5.conf.bu for new libkrb5.
+  * Removed unneccesary options from krb5.conf.bu
+
+ -- Kyle Brogle <broglek@bu.edu>  Thu, 08 Jul 2010 10:35:15 -0400
+
 bu-kerberos-config (0.01) unstable; urgency=low
 
   * First Version

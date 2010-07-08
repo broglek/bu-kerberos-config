@@ -1,15 +1,9 @@
-[logging]
- default = FILE:/var/log/krb5libs.log
- kdc = FILE:/var/log/krb5kdc.log
- admin_server = FILE:/var/log/kadmind.log
-
 [libdefaults]
  ticket_lifetime = 36000
  default_realm = bu.edu
  dns_lookup_realm = false
  dns_lookup_kdc = false
- default_tkt_enctypes = DES-CBC-CRC
- default_tgs_enctypes = DES-CBC-CRC
+ allow_weak_crypto = true
 
 [realms]
  AD.BU.EDU = {
@@ -43,9 +37,6 @@
  ad.bu.edu = AD.BU.EDU
  engna1.bu.edu = AD.BU.EDU
  engna2.bu.edu = AD.BU.EDU
-
-[kdc]
- profile = /var/kerberos/krb5kdc/kdc.conf
 
 [appdefaults]
  pam = {
